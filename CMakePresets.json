@@ -1,0 +1,16 @@
+{
+	"version": 2,
+	"configurePresets": [
+		{
+			"name": "vcpkg",
+			"generator": "Unix Makefiles",
+			"binaryDir": "./build",
+			"cacheVariables": {
+				"CMAKE_MAKE_PROGRAM": "/usr/bin/make",
+				"CMAKE_C_COMPILER": "/usr/bin/gcc",
+				"CMAKE_CXX_COMPILER": "/usr/bin/g++",
+				"CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
+			}
+		}
+	]
+}
