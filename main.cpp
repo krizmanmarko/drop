@@ -21,21 +21,22 @@ protected:
 			velx = -velx;
 			velx--;
 		}
+		if (velx > 100) velx = 1;
+
+		vely -= 2;
 		if (y + vely < 0) {
+			y += vely;
 			vely = -vely;
-			vely++;
-		} else if (530 < y + vely) {
-			vely = -vely;
-			vely--;
 		}
+
 		x += velx;
 		y += vely;
+
 		QPainter painter(this);
 		painter.setPen(Qt::black);
-		painter.setBrush(Qt::red);
+		painter.setBrush(Qt::blue);
 		QRect rectangle(x, y, 50, 50);
 		painter.drawRect(rectangle);
-			
 	}
 
 public:
@@ -44,7 +45,7 @@ public:
 		x(1),
 		y(1),
 		velx(2),
-		vely(3)
+		vely(30)
 	{
 		timer = new QTimer(this);
 		connect(
